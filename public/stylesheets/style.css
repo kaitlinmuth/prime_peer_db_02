@@ -1,8 +1,16 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image: url("../images/chalkboard.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.layout {
+    margin-left: 50px;
+    color: #fafafa;
+}
+h1 {
+    margin-left: 50px;
+    color: #fafafa;
+
 }
 
-a {
-  color: #00B7FF;
-}
