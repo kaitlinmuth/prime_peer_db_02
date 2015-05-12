@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var assignRoute = require('./routes/assignments');
 
 var app = express();
 
@@ -24,12 +25,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/assignment', assignRoute);
+
 
 app.get('/', function(request, response){
   response.sendfile('index.html');
 });
 
-var MongoClient = require('mongodb').MongoClient;
+var MongoClient = require('mongoose');
 
 MongoClient.connect("mongodb://localhost:27017/clientDb", function(err, db) {
   if(!err) {
