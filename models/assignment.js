@@ -4,8 +4,7 @@ var assignmentSchema = new mongoose.Schema({
     name: String,
     score: Number,
     finished: {
-        completed: Boolean,
-        date_completed: Date
+        completed: Boolean
     },
     description: String,
     gold_stars: Number

@@ -4,7 +4,6 @@ body {
 .layout {
     font-family:  "Special Elite";
     font-size: 20px;
-    margin: 0 0 10px 200px;
     color: #fafafa;
 }
 h1 {
@@ -18,7 +17,6 @@ ul {
 }
 form{
     float: right;
-    margin-right: 200px;
 }
 h3{
     font-family:  "Special Elite";
@@ -31,4 +29,7 @@ input{
     height: 20px;
 }
 
+.button {
+    background-color: white;
+}
 
