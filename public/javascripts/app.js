@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $.get("/assignment", function(data){
         for(var i = 0; i < data.length; i++){
-            $(".layout").append("<li id='"+data[i]._id"'>"+ data[i].name+"<br>"+data[i].description+"<br>"+data[i].score+"<div class='btn removeBtn'>Remove</div></li>");
+            $(".layout").append("<li id='"+data[i]._id+"' data-id='"+data[i]._id+"'>"+ data[i].name+"<br>"+data[i].description+"<br>"+data[i].score+"<br><div class='btn removeBtn'>Remove</div></li>");
             console.log("this works");
         }
     });
@@ -18,11 +18,26 @@ $(document).ready(function () {
             },
             function(data,status){
                 document.getElementById("assignmentForm").reset();
-                $(".layout").append("<li>"+ data.name+"<br>"+data.description+"<br>"+data.score+"<div class='btn removeBtn'>Remove</div></li>");
+                $(".layout").append("<li>"+ data.name+"<br>"+data.description+"<br>"+data.score+"<br><div class='btn removeBtn'>Remove</div></li>");
             });
     });
 
-    $('.removeBtn').on('click', function(){
-        $.get("/assignment/"+)
-    })
+    $('.layout').on('click', '.removeBtn', function(){
+        console.log("clicked!");
+        var id = $(this).parent().data("id");
+        console.log(id);
+        $.ajax({
+           type: 'DELETE',
+            url: '/assignment/'+id,
+            crossDomain: false,
+            success: function(data){
+                $('.layout').find('#'+id).slideUp("fast", function(){
+                    $(this).remove();
+                    })
+            },
+            error: function(xhr, status){
+                alert('Error: '+status);
+            }
+        });
+    });
 });

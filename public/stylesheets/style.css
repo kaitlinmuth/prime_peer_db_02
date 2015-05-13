@@ -1,19 +1,31 @@
 body {
+    background: url("../images/brick.jpg") no-repeat fixed center;
+}
+
+.container {
     background: url("../images/chalkboard.jpg") no-repeat fixed center;
+    height:853px;
+    width: 1280px;
 }
 .layout {
     font-family:  "Special Elite";
     font-size: 20px;
     color: #fafafa;
+    overflow: scroll;
+    height: 600px;
 }
 h1 {
     font-family:  "Special Elite";
     font-size: 50px;
-    margin: 40px 0 10px 200px;
+    margin: 40px 0 10px 0;
     color: #fafafa;
+    text-align: center;
 }
-ul {
-    list-style: none;
+.layout li {
+    list-style-type: none;
+    padding-bottom: 10px;
+    width: 600px;
+    margin-top: 20px;
 }
 form{
     float: right;
@@ -25,11 +37,25 @@ h3{
     padding: 0px;
 }
 input{
-    width: 300px;
+    width: 500px;
     height: 20px;
+}
+
+.submit{
+    margin-top: 2em;
+    text-align: center;
 }
 
 .button {
     background-color: white;
+}
+.removeBtn {
+    background-color: white;
+    color: #000;
+    width: 75px;
+    height: 2em;
+    text-align: center;
+    font-size: 12px;
+
 }
 
