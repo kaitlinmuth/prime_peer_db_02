@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $.get("/assignment", function(data){
         for(var i = 0; i < data.length; i++){
-            $(".layout").append("<li id='"+data[i]._id+"' data-id='"+data[i]._id+"'>"+ data[i].name+"<br>"+data[i].description+"<br>"+data[i].score+"<br><div class='btn removeBtn'>Remove</div></li>");
+            $(".layout").append("<li id= '"+data[i]._id+"' data-id= '"+data[i]._id+"'>"+ data[i].name+"<br>"+data[i].description+" Completed: "+data[i].completed+", Score: "+data[i].score+", Gold Stars: "+data[i].gold_stars+"<br><div class='btn removeBtn'>Remove</div></li>");
             console.log("this works");
         }
     });
@@ -18,7 +18,7 @@ $(document).ready(function () {
             },
             function(data,status){
                 document.getElementById("assignmentForm").reset();
-                $(".layout").append("<li>"+ data.name+"<br>"+data.description+"<br>"+data.score+"<br><div class='btn removeBtn'>Remove</div></li>");
+                $(".layout").append("<li id= '"+data._id+"' data-id= '"+data._id+"'>"+ data.name+"<br>"+data.description+" Completed: "+data.completed+", Score: "+data.score+", Gold Stars: "+data.gold_stars+"<br><div class='btn removeBtn'>Remove</div></li>");
             });
     });
 

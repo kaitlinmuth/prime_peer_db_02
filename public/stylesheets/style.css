@@ -4,7 +4,7 @@ body {
 
 .container {
     background: url("../images/chalkboard.jpg") no-repeat fixed center;
-    height:853px;
+    height:900px;
     width: 1280px;
 }
 .layout {
@@ -13,11 +13,12 @@ body {
     color: #fafafa;
     overflow: scroll;
     height: 600px;
+
 }
 h1 {
     font-family:  "Special Elite";
     font-size: 50px;
-    margin: 40px 0 10px 0;
+    margin: 70px 0 10px 0;
     color: #fafafa;
     text-align: center;
 }
@@ -25,7 +26,7 @@ h1 {
     list-style-type: none;
     padding-bottom: 10px;
     width: 600px;
-    margin-top: 20px;
+    margin: 20px 0 0 20px;
 }
 form{
     float: right;
