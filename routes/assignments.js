@@ -4,43 +4,27 @@ var router = express.Router();
 var Assignment = require('../models/assignment');
 var mongoose = require('mongoose');
 
-router.get('/', function(request,response, next){
+router.get('/', function(req,res, next){
+    var search = {};
+    var sort = {name: 1};
+
+    if(req.query.name)
+        search.name = req.query.name;
+
+    console.log("sort is ",req.query.sort);
+
+    if (req.query.sort)
+        sort.name = req.query.sort;
+
     Assignment.find(
-        {},
-        {},
+        search,
+        null,
         {
-            sort: {name: 1}
+            sort: sort
         },
         function(err, data){
-        response.json(data);
-    })
-});
-//router.get('/ascend/', function(request,response, next){
-//    Assignment.find(
-//        {},
-//        {},
-//        {
-//            sort: {name: 1}
-//                },
-//        function(err, data)
-//    {
-//        if(err)console.log(err);
-//        response.json(data);
-//    });
-//});
-
-router.get('/descend/', function(request,response, next){
-    Assignment.find(
-        {},
-        {},
-        {
-            sort: {name: -1}
-        },
-        function(err, data)
-        {
-            if(err)console.log(err);
-            response.json(data);
-        });
+        res.json(data);
+    });
 });
 
 router.post('/', function(req,res, next){
@@ -49,6 +33,7 @@ router.post('/', function(req,res, next){
         res.json(post);
     });
 });
+
 router.get('/:id', function(req, res, next){
     Assignment.findById(req.params.id, function(err, post){
         if(err) return next(err);

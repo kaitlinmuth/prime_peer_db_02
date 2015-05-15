@@ -27,14 +27,14 @@ body {
 h1 {
     font-family:  "Special Elite";
     font-size: 50px;
-    margin: 70px 0 10px 0;
+    margin: 20px 0;
     color: #fafafa;
     text-align: center;
 }
 .layout li {
     list-style-type: none;
     padding-bottom: 10px;
-    width: 600px;
+    max-width: 100%;
     margin: 0 0 0 20px;
 }
 form{
@@ -76,6 +76,15 @@ input{
 }
 .down{
     color: white;
+}
+.box{
+    height: 50px;
+    margin-left: 3.75em;
+    color: white;
+}
+
+.box input {
+    color: black;
 }
 
 
