@@ -7,13 +7,22 @@ body {
     height:900px;
     width: 1280px;
 }
+
+.controls {
+    border: solid 4px white;
+    border-radius:  70%;
+    width: 50px;
+    text-align: center;
+    position: relative;
+    left: -80px;
+    top: 270px;
+}
 .layout {
-    font-family:  "Special Elite";
+    font-family: "Special Elite";
     font-size: 20px;
     color: #fafafa;
-    overflow: scroll;
     height: 600px;
-
+    overflow: scroll;
 }
 h1 {
     font-family:  "Special Elite";
@@ -26,7 +35,7 @@ h1 {
     list-style-type: none;
     padding-bottom: 10px;
     width: 600px;
-    margin: 20px 0 0 20px;
+    margin: 0 0 0 20px;
 }
 form{
     float: right;
@@ -62,4 +71,12 @@ input{
 #intake{
     padding-left: 75px;
 }
+.up{
+    color: white;
+}
+.down{
+    color: white;
+}
+
+
 

@@ -5,9 +5,42 @@ var Assignment = require('../models/assignment');
 var mongoose = require('mongoose');
 
 router.get('/', function(request,response, next){
-    Assignment.find(function(err, data){
+    Assignment.find(
+        {},
+        {},
+        {
+            sort: {name: 1}
+        },
+        function(err, data){
         response.json(data);
     })
+});
+//router.get('/ascend/', function(request,response, next){
+//    Assignment.find(
+//        {},
+//        {},
+//        {
+//            sort: {name: 1}
+//                },
+//        function(err, data)
+//    {
+//        if(err)console.log(err);
+//        response.json(data);
+//    });
+//});
+
+router.get('/descend/', function(request,response, next){
+    Assignment.find(
+        {},
+        {},
+        {
+            sort: {name: -1}
+        },
+        function(err, data)
+        {
+            if(err)console.log(err);
+            response.json(data);
+        });
 });
 
 router.post('/', function(req,res, next){
@@ -36,6 +69,14 @@ router.delete('/:id', function(req, res, next){
         res.json(post);
     });
 });
+//router.get('/search/:note', function(req, res, next){
+//  Todo.find({note: new RegExp(req.params.note, 'i') }, function (err, todos) {
+//    if (err) return next(err);
+//    res.json(todos);
+//  });
+//});
+
+
 
 module.exports = router;
 
